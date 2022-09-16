@@ -26,7 +26,7 @@ def readMsg(queue, interface):
                 continue #The continue keyword is used to end the current iteration in a loop and continues to the next iteration. So rpi will keep trying to read until it receives sth
             if msg is not None:
                 queue.put(msg) #Put item into the queue 
-                return 1 #successful
+                #successful
 
         except Exception as e:
             print(f"[READ MSG ERROR]: {str(e)}")
