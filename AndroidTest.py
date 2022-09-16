@@ -110,6 +110,8 @@ if __name__ == '__main__':
         while True:
             # Read message
             print("Awaiting Message........")
+            while queue.empty():
+                continue
             print("Peek Q: ")
             msg = queue.get() #Remove and return an item from the queue. 
             print("Received msg: ", msg)
