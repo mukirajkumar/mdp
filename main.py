@@ -6,8 +6,8 @@
 from multiprocessing import Process, Queue   # Manage multi-thread programming
 import time
 
-from communicator.STM import STM
-from communicator.Android import Android
+from STM import STM
+from Android import Android
 
 import base64
 import os
