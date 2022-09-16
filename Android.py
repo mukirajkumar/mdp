@@ -7,6 +7,8 @@ import bluetooth
 import os
 
 class Android(object):
+    MAC_ADDRESS = "B8:27:EB:3A:91:84"
+    RFCOMM = 1
 
     # Initialise the connection with the Android tablet
     def __init__(self):
@@ -19,28 +21,29 @@ class Android(object):
         #host_mac = 'E4:5F:01:55:A5:52'
         self.server = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
         #self.server = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-        self.server.bind(('', RFCOMM_channel))
-        self.server.listen(RFCOMM_channel)
-        self.port = self.server.getsockname()[1]
+        
 
-        bluetooth.advertise_service(
-                self.server,
-                "MDP_Grp36",
-                service_id=uuid,
-                service_classes = [uuid, bluetooth.SERIAL_PORT_CLASS],
-                profiles = [bluetooth.SERIAL_PORT_PROFILE],
-                protocols = [bluetooth.OBEX_UUID])
+        # bluetooth.advertise_service(
+        #         self.server,
+        #         "MDP_Grp36",
+        #         service_id=uuid,
+        #         service_classes = [uuid, bluetooth.SERIAL_PORT_CLASS],
+        #         profiles = [bluetooth.SERIAL_PORT_PROFILE],
+        #         protocols = [bluetooth.OBEX_UUID])
 
     # Getter method to check is connection is established
     def getisConnected(self):
         return self.isConnected
 
     def connect(self):
-        print(f"Waiting for connection with Android Tablet on RFCOMM channel {self.port} ...")
+        print(f"Waiting for connection with Android Tablet on RFCOMM channel {self.RFCOMM} ...")
         while self.isConnected == False:
             try:
                 if self.client is None:
                     # Accepts the connection
+                    self.server.bind((self.MAC_ADDRESS, self.RFCOMM))
+                    self.server.listen(self.RFCOMM)
+                    # self.port = self.server.getsockname()[1]
                     self.client, address = self.server.accept()
                     print(f"[SUCCESSFUL CONNECTION]: Successfully established connection with Android Tablet from {address}.")
                     self.isConnected = True
