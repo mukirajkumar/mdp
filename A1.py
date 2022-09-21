@@ -33,7 +33,7 @@ def msg_passing(msg): #pass in the message that u read frm andriod
     if len(msg) != 0:
         message = msg.split('|', 1) #split the message into two list separated by |
         if len(message)!= 2: #Return the number of items in a list #did not split correctly
-            return    
+            return
 
         # Msg FOR STM
         if message[0] == 'STM': #Encoded 
@@ -57,13 +57,13 @@ def msg_passing(msg): #pass in the message that u read frm andriod
 
         #     interfaces[ALG].write(alg_msg) #write into ALG
 
-        # Msg for AND (frm STM)
-#         if message[0] == 'AND': 
-#             print("FOR AND")
-#             print('FRM STM > %s : %s' % (str(message[0]), str(message[1])))
-#             and_msg = message[1]            
-# 
-#             interfaces[AND].write(and_msg) #write into AND
+        #Msg for AND (frm STM)
+        # if message[0] == 'AND': 
+        #      print("FOR AND")
+        #      print('FRM STM > %s : %s' % (str(message[0]), str(message[1])))
+        #      and_msg = message[1]            
+
+        #      interfaces[AND].write(and_msg) #write into AND
 
         return 1 #successful
     
