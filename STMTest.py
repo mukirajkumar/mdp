@@ -115,7 +115,7 @@ if __name__ == '__main__':
 
             # Send message
             print("Now writing message to STM........")
-            msg = "1"
+            msg = "STM|1"
             msg_passing(msg) 
             print("msg status:", msg)
 
