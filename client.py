@@ -40,7 +40,7 @@ def msgClient():
     #message = newClient.recv(2048)
     message = 'halp'
     print('received not decoded: ' +str(message))
-    message = message.decode('utf-8')
+    #message = message.decode('utf-8')
     print('Received: ' + str(message))  # depending on the label; call for stm to do appropriate movements
     newClient.close()
     print('Client 2 received message')
