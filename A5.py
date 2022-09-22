@@ -31,6 +31,14 @@ def readMsg(queue, interface):
         except Exception as e:
             print(f"[READ MSG ERROR]: {str(e)}")
 
+def readTxtfile(path):
+    if path.exists(path) is True:
+        with open(path, 'r') as f:
+            data = f.read()
+        message= str(data)
+        return message
+
+
 #Passing message 
 def msg_passing(msg): #pass in the message that u read frm andriod 
     if len(msg) != 0:
@@ -113,10 +121,12 @@ if __name__ == '__main__':
 #             print("Peaking Q: ")
 #             msg = queue.get() #Remove and return an item from the queue. 
 #             print("Received msg: ", msg)
-            message = rpiclient.imageClient()
+            rpiclient.imageClient()
+            time.sleep(60)
+            message = readTxtfile('/home/group9/img_results/result_img_label_1.txt')
             #message = "BullsEye"
-            if message == "Nine":
-                msg = "STM|C" #have not found image
+            if str(message) == "Bullseye":
+                msg = "STM|B" #have not found image
             else:
                 break
             # Send message
