@@ -38,14 +38,28 @@ def msgClient():
     newClient.connect((host, port))
     if(newClient!=None):
         print('Client 2 connected to server')
-    message = newClient.recv(2048)
-    #message = 'halp'
-    print('received not decoded: ' +str(message))
-    message = message.decode('utf-8')
-    print('Received: ' + str(message))  # depending on the label; call for stm to do appropriate movements
-    newClient.close()
-    print('Client 2 received message')
-    return str(message)
+    try:
+        message = newClient.recv(2048)
+    except Exception as exception:
+        print('RPI failed read from server via wifi' + str(exception))
+    else:
+        if message is not None and len(message)>0:
+            print('Message read from server')
+            message = message.decode('utf-8')
+            print('Received: ' + str(message))
+            newClient.close()
+            print('Client 2 received message')
+            return str(message)
+
+        
+
+    # #message = 'halp'
+    # print('received not decoded: ' +str(message))
+    # message = message.decode('utf-8')
+    # print('Received: ' + str(message))  # depending on the label; call for stm to do appropriate movements
+    # newClient.close()
+    # print('Client 2 received message')
+    # return str(message)
 
 #capture of image, automatic sending of image to server on PC
 # class Client():
