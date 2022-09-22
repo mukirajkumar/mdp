@@ -4,7 +4,7 @@ import time
 import os.path
 from os import path
 
-host = '10.96.108.67'
+host = '192.168.1.68'
 # host = '10.27.24.227'
 port = 54321
 
