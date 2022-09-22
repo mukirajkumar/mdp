@@ -2,7 +2,7 @@ import socket
 import picamera
 import time
 import sys
-from STM import STM
+#from STM import STM
 
 host = '10.27.182.28'  # The server's hostname or IP address 
 port = 54321  # The port used by the server
