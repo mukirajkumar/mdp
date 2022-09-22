@@ -15,6 +15,7 @@ import base64
 import os
 import glob
 import socket
+from os import path
 
 # ===============================================================================================
 # Read msg frm Alg, STM or AND and put message into the queue, need to put into queue because u may receive msg frm diff devices at the same time
@@ -31,9 +32,9 @@ def readMsg(queue, interface):
         except Exception as e:
             print(f"[READ MSG ERROR]: {str(e)}")
 
-def readTxtfile(path):
-    if path.exists(path) is True:
-        with open(path, 'r') as f:
+def readTxtfile(pathString):
+    if path.exists(pathString) is True:
+        with open(pathString, 'r') as f:
             data = f.read()
         message= str(data)
         return message
