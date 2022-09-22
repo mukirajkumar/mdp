@@ -53,13 +53,13 @@ def msg_passing(msg): #pass in the message that u read frm andriod
 
             #print("Movement CMD Complete")
 
-        # Msg for Alg (frm AND)
-        if message[0] == 'ALG': 
-            print("FOR ALG")
-            print('FRM AND > %s : %s' % (str(message[0]), str(message[1])))
-            alg_msg = message[1]            
+        # # Msg for Alg (frm AND)
+        # if message[0] == 'ALG': 
+        #     print("FOR ALG")
+        #     print('FRM AND > %s : %s' % (str(message[0]), str(message[1])))
+        #     alg_msg = message[1]            
 
-            interfaces[ALG].write(alg_msg) #write into ALG
+        #     interfaces[ALG].write(alg_msg) #write into ALG
 
         # Msg for AND (frm STM)
         #if message[0] == 'AND': 
@@ -93,7 +93,7 @@ if __name__ == '__main__':
     stm = Process(target=readMsg, args=(queue, interfaces[0])) #target = the function that u wanna run
     # algo = Process(target=readMsg, args=(queue, interfaces[ALG])) #read msg frm alg
     # stm = Process(target=readMsg, args=(queue, interfaces[STM]))
-    rpiclient = RPIClient()
+    rpiclient = client()
     for interface in interfaces:
         print(interface)
         interface.connect() # connect STM first, then Android #so this will be like calling STM.connect()
