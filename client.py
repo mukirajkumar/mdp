@@ -47,6 +47,7 @@ def msgClient():
 #capture of image, automatic sending of image to server on PC
 # class client():
 def imageClient():
+    print("entering imgClient function")
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect((host, port))
     print('Client 1 connected to server')
