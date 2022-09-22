@@ -24,7 +24,7 @@ def captureImage():
     print('[RPI_INFO] Camera warmed up and ready')
 
     picName = 'image.jpg'
-    picPath = "/home/group9/IR/images/"
+    picPath = "/home/group9/img_1.jpg"
     completePath = picPath + picName
     camera.capture(completePath)
     print("We have taken a picture.")
