@@ -6,7 +6,7 @@
 from multiprocessing import Process, Queue   # Manage multi-process programming
 import time
 
-from STM import STM 
+# from STM import STM 
 # import Android
 from Algo import Algo
 from client import Client
@@ -90,7 +90,7 @@ if __name__ == '__main__':
     # Set up a queue to support manage messages received by the interfaces
     queue = Queue() #Constructor for a FIFO queue
     
-    stm = Process(target=readMsg, args=(queue, interfaces[0])) #target = the function that u wanna run
+    # stm = Process(target=readMsg, args=(queue, interfaces[0])) #target = the function that u wanna run
     # algo = Process(target=readMsg, args=(queue, interfaces[ALG])) #read msg frm alg
     # stm = Process(target=readMsg, args=(queue, interfaces[STM]))
     rpiclient = Client()
@@ -101,7 +101,7 @@ if __name__ == '__main__':
     #Start #need to explicitely start the process so that it will start running
     # android.start() # RPI starts to receive message from Android 
     # algo.start()
-    stm.start()
+    #stm.start()
     
     print("Multiprocess communication started.")
 
