@@ -93,7 +93,7 @@ if __name__ == '__main__':
     stm = Process(target=readMsg, args=(queue, interfaces[0])) #target = the function that u wanna run
     # algo = Process(target=readMsg, args=(queue, interfaces[ALG])) #read msg frm alg
     # stm = Process(target=readMsg, args=(queue, interfaces[STM]))
-    rpiclient = client()
+    #rpiclient = client()
     for interface in interfaces:
         print(interface)
         interface.connect() # connect STM first, then Android #so this will be like calling STM.connect()
