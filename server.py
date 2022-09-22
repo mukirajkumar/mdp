@@ -25,8 +25,8 @@ def setupServer():
     while True:
         clientSocket, clientAddress = server.accept()
         print('[S] Client connected')
-        # filePath = r"/Users/sizzlingzf/Documents/y3s1/CZ3004 MDP/yolov5/data/images/image" + str(counter) + ".jpg"
-        filePath = r"/Users/muki0001/Documents/mdp-main/image1.jpg"
+        #filePath = r"/Users/sizzlingzf/Documents/y3s1/CZ3004 MDP/yolov5/data/images/image" + str(counter) + ".jpg"
+        filePath = r"/Users/muki0001/Documents/mdp-main/image" + str(counter) + ".jpg"
         file = open(filePath, 'wb')
 
         # Receive image from client in byte chunks and writing jpg image in file path

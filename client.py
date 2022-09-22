@@ -4,7 +4,7 @@ import time
 import sys
 from STM import STM
 
-host = '172.21.149.89'  # The server's hostname or IP address 
+host = '172.23.48.1'  # The server's hostname or IP address 
 port = 54321  # The port used by the server
 
 
