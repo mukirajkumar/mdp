@@ -38,6 +38,7 @@ def msgClient():
     newClient.connect((host, port))
     print('Client 2 connected to server')
     message = newClient.recv(1024)
+    print('received not decoded msg')
     message = message.decode('utf-8')
     print('Received: ' + str(message))  # depending on the label; call for stm to do appropriate movements
     newClient.close()
