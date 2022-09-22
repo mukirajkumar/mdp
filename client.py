@@ -40,7 +40,7 @@ def msgClient():
         print('Client 2 connected to server')
     try:
         time.sleep(5)
-        message = newClient.recv(2048)
+        message = newClient.recv(1024)
     except Exception as exception:
         print('RPI failed read from server via wifi' + str(exception))
     else:
