@@ -49,6 +49,7 @@ def msgClient():
 def imageClient():
     print("entering imgClient function")
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    print("socket done")
     client.connect((host, port))
     print('Client 1 connected to server')
 
