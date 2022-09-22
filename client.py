@@ -23,8 +23,8 @@ def captureImage():
     print('[RPI_INFO] Warming up camera...')
     print('[RPI_INFO] Camera warmed up and ready')
 
-    picName = 'image.jpg'
-    picPath = "/home/group9/img_1.jpg"
+    picName = 'image1.jpg'
+    picPath = "/home/group9/"
     completePath = picPath + picName
     camera.capture(completePath)
     print("We have taken a picture.")
@@ -52,6 +52,7 @@ def imageClient():
     print('Client 1 connected to server')
 
     path = captureImage()
+    print("image captured")
     image = open(path, 'rb')
     imageData = image.read(2048)
     while imageData:
