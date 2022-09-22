@@ -4,7 +4,7 @@ import time
 import os.path
 from os import path
 
-host = '172.21.149.89'
+host = '10.96.108.67'
 # host = '10.27.24.227'
 port = 54321
 
@@ -52,7 +52,7 @@ def setupServer():
 
         # Check if image saved has corresponding label file. If yes, send string message of label back to RPI. Else, send error message.
         
-        labelText = "" ### path to txt file containing image id
+        labelText = "/Users/muki0001/Documents/mdp-main/image" ### path to txt file containing image id
         if path.exists(labelText) is True:
             with open(labelText, 'r') as f:
                 data = f.read()
