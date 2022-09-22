@@ -113,11 +113,12 @@ if __name__ == '__main__':
 #             print("Peaking Q: ")
 #             msg = queue.get() #Remove and return an item from the queue. 
 #             print("Received msg: ", msg)
-            message = rpiclient.imageClient()
+            #message = rpiclient.imageClient()
+            message = "BullsEye"
             if message == "BullsEye":
-                msg = "STM|1" #have not found image
+                msg = "STM|C" #have not found image
             else:
-                msg = "STM|0" #have found image
+                break
             # Send message
             print("Now writing message to STM........")
             #msg = "STM|1"
