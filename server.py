@@ -18,6 +18,7 @@ def setupServer():
         print(msg)
     print("[S] Socket bind complete.")
     server.listen(2)
+
     counter = 1
 
     # Use while loop to ensure that the server is always running and waiting for a client to connect
