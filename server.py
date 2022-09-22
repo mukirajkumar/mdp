@@ -4,7 +4,7 @@ import time
 import os.path
 from os import path
 
-host = '192.168.22.12'
+host = '172.21.149.89'
 # host = '10.27.24.227'
 port = 54321
 
@@ -25,7 +25,8 @@ def setupServer():
     while True:
         clientSocket, clientAddress = server.accept()
         print('[S] Client connected')
-        filePath = r"/Users/sizzlingzf/Documents/y3s1/CZ3004 MDP/yolov5/data/images/image" + str(counter) + ".jpg"
+        # filePath = r"/Users/sizzlingzf/Documents/y3s1/CZ3004 MDP/yolov5/data/images/image" + str(counter) + ".jpg"
+        filePath = r"/Users/muki0001/Documents/mdp-main/image1.jpg"
         file = open(filePath, 'wb')
 
         # Receive image from client in byte chunks and writing jpg image in file path
