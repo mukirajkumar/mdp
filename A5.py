@@ -80,7 +80,7 @@ if __name__ == '__main__':
     
 # Test communication with Andriod 
     interfaces = []
-    interfaces.append(STM()) 
+    #interfaces.append(STM()) 
     # interfaces.append(Android())
     # interfaces.append(Algo())
     # Index of the interfaces in the list
