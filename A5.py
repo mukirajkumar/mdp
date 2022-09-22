@@ -9,7 +9,7 @@ import time
 from STM import STM 
 # import Android
 from Algo import Algo
-from client import client
+#from client import client
 
 import base64
 import os
