@@ -36,7 +36,8 @@ def captureImage():
 def msgClient():
     newClient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     newClient.connect((host, port))
-    print('Client 2 connected to server')
+    if(newClient!=None):
+        print('Client 2 connected to server')
     message = newClient.recv(2048)
     #message = 'halp'
     print('received not decoded: ' +str(message))
