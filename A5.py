@@ -9,7 +9,7 @@ import time
 from STM import STM 
 # import Android
 from Algo import Algo
-#from client import client
+from client import Client
 
 import base64
 import os
@@ -93,7 +93,7 @@ if __name__ == '__main__':
     stm = Process(target=readMsg, args=(queue, interfaces[0])) #target = the function that u wanna run
     # algo = Process(target=readMsg, args=(queue, interfaces[ALG])) #read msg frm alg
     # stm = Process(target=readMsg, args=(queue, interfaces[STM]))
-    #rpiclient = client()
+    rpiclient = Client()
     for interface in interfaces:
         print(interface)
         interface.connect() # connect STM first, then Android #so this will be like calling STM.connect()
@@ -113,9 +113,9 @@ if __name__ == '__main__':
 #             print("Peaking Q: ")
 #             msg = queue.get() #Remove and return an item from the queue. 
 #             print("Received msg: ", msg)
-            #message = rpiclient.imageClient()
-            message = "BullsEye"
-            if message == "BullsEye":
+            message = rpiclient.imageClient()
+            #message = "BullsEye"
+            if message == "Nine":
                 msg = "STM|C" #have not found image
             else:
                 break
