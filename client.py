@@ -4,7 +4,7 @@ import time
 import sys
 from STM import STM
 
-host = '192.168.9.28'  # The server's hostname or IP address 
+host = '192.168.9.6'  # The server's hostname or IP address 
 port = 54321  # The port used by the server
 
 
@@ -24,7 +24,7 @@ def captureImage():
     print('[RPI_INFO] Camera warmed up and ready')
 
     picName = 'image1.jpg'
-    picPath = "/home/group9/"
+    picPath = "/home/group9/taken_images"
     completePath = picPath + picName
     camera.capture(completePath)
     print("We have taken a picture.")

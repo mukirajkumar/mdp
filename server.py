@@ -4,7 +4,7 @@ import time
 import os.path
 from os import path
 
-host = '192.168.1.68'
+host = '192.168.9.6'
 # host = '10.27.24.227'
 port = 54321
 
@@ -26,7 +26,7 @@ def setupServer():
         clientSocket, clientAddress = server.accept()
         print('[S] Client connected')
         #filePath = r"/Users/sizzlingzf/Documents/y3s1/CZ3004 MDP/yolov5/data/images/image" + str(counter) + ".jpg"
-        filePath = r"/Users/muki0001/Documents/mdp-main/image" + str(counter) + ".jpg"
+        filePath = r"/Users/Lenovo/OneDrive/Desktop/taken_images/img_" + str(counter) + ".jpg"
         file = open(filePath, 'wb')
 
         # Receive image from client in byte chunks and writing jpg image in file path
@@ -52,13 +52,13 @@ def setupServer():
 
         # Check if image saved has corresponding label file. If yes, send string message of label back to RPI. Else, send error message.
         
-        labelText = "/Users/muki0001/Documents/mdp-main/image" ### path to txt file containing image id
+        labelText = r"/Users/Lenovo/OneDrive/Desktop/result_img_label/result_img_label_" +str(counter) +'.txt' ### path to txt file containing image id
         if path.exists(labelText) is True:
             with open(labelText, 'r') as f:
                 data = f.read()
             result = str(data)
-            label = int(result[:2].strip()) + 1
-            message = str(label)
+            #label = int(result[:2].strip()) + 1
+            message = result
             print('[S] Sending: ' + message)
             clientSocket.send(message.encode('utf-8'))
             print("[S] Message sent.")
