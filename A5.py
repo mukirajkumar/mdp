@@ -6,7 +6,7 @@
 from multiprocessing import Process, Queue   # Manage multi-process programming
 import time
 
-# from STM import STM 
+from STM import STM 
 # import Android
 from Algo import Algo
 from client import Client
@@ -133,8 +133,9 @@ if __name__ == '__main__':
             # Send message
             print("Now writing message to STM........")
             #msg = "STM|1"
-            msg_passing(msg) 
+            msg_passing(msg)
             print("msg status:", msg)
+            time.sleep(30)
 
             if msg == -1:
                 break

@@ -63,7 +63,7 @@ def msgClient():
 
 #capture of image, automatic sending of image to server on PC
 # class Client():
-def imageClient(self):
+def imageClient():
     print("entering imgClient function")
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     print("socket done")
